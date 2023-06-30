@@ -17,11 +17,11 @@ const spiralTraversal = (matrixArray) => {
             result.push(matrixArray[i][ec]);
         }
         for(let i = ec-1; i >= sc; i--) {
-            if (sr === er) break; //If there is a single row, it will prevent double count
+            if (sr === er) break; // If there is a single row, it will prevent double count
             result.push(matrixArray[er][i]);
         }
         for(let i = er-1; i >= sr+1; i--) {
-            if (sc === ec) break;
+            if (sc === ec) break; // If there is a single column, it will prevent a double count
             result.push(matrixArray[i][sc])
         }
         sr++;
