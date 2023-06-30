@@ -9,7 +9,7 @@ const twoSum = (array, target) => {
     let map = {};
     for (let i = 0; i < array.length; i++) {
         const compliment = target - array[i];
-        if (compliment in map) return [i, map[compliment]];
+        if (compliment in map) return [map[compliment], i];
         else map[array[i]] = i;
     }
 
@@ -51,6 +51,6 @@ const testCases = [testCase1, testCase2, testCase3, testCase4, testCase5];
 testCases.forEach((testCase, index) => {
     let result = twoSum(testCase.nums, testCase.target)
     console.log(`Expected Output: [${testCase.expectedOutput}] - Output: [${result}]`);
-    if (toString(result) === toString(testCase.expectedOutput)) console.log(`Test case ${index+1}: Passed`);
+    if (JSON.stringify(result) === JSON.stringify(testCase.expectedOutput)) console.log(`Test case ${index+1}: Passed`);
     else console.log("Test case: Failed");
 })
