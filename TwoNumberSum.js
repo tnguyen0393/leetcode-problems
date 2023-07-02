@@ -5,7 +5,7 @@ You can return the answer in any order.
 */
 
 
-const twoSum = (array, target) => {
+const twoNumberSum = (array, target) => {
     let map = {};
     for (let i = 0; i < array.length; i++) {
         const compliment = target - array[i];
@@ -49,7 +49,7 @@ let testCase5 = {
 const testCases = [testCase1, testCase2, testCase3, testCase4, testCase5];
 
 testCases.forEach((testCase, index) => {
-    let result = twoSum(testCase.nums, testCase.target)
+    let result = twoNumberSum(testCase.nums, testCase.target)
     console.log(`Expected Output: [${testCase.expectedOutput}] - Output: [${result}]`);
     if (JSON.stringify(result) === JSON.stringify(testCase.expectedOutput)) console.log(`Test case ${index+1}: Passed`);
     else console.log("Test case: Failed");
